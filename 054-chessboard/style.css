@@ -15,23 +15,22 @@ body {
 }
 
 ul {
+	display: table;
 	margin: 0;
 	padding: 0;
-	list-style-type: none;
-	display: flex;
 }
 
 li {
+	display: table-cell;
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
-	line-height: 1.5em;
-	font-weight: bold;
+	vertical-align: middle;
 }
 
 ul:nth-child(odd) li:nth-child(even),
 ul:nth-child(even) li:nth-child(odd) {
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 ul:nth-child(-n+2) {
