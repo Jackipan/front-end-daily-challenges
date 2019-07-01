@@ -65,10 +65,15 @@ body {
 	position: relative;
 	width: 6em;
 	height: 10em;
-	background: linear-gradient(
-		sienna 3em,
-		sandybrown 3em,
-		sandybrown 10em);
+	background-color: sandybrown;
 	left: calc(50% - 6em / 2);
 	border-radius: 0 0 3em 3em;
+}
+
+.stick::after {
+	content: '';
+	position: absolute;
+	width: inherit;
+	height: 3em;
+	background-color: sienna;
 }

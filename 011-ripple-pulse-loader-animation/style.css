@@ -8,14 +8,17 @@ body,
 	background-color: black;
 }
 
+:root {
+	--innerRadius: 2em;
+}
+
 .circle {
-	--inner-radius: 2em;
-	width: calc(var(--inner-radius) * 2);
-	height: calc(var(--inner-radius) * 2);
+	width: calc(var(--innerRadius) * 2);
+	height: calc(var(--innerRadius) * 2);
 	background-color: lime;
 	border-radius: 50%;
-	box-shadow: 0 0 0 calc(var(--inner-radius) - 0.4em) black,
-				0 0 0 var(--inner-radius) lime;
+	box-shadow: 0 0 0 calc(var(--innerRadius) - 0.4em) black,
+				0 0 0 var(--innerRadius) lime;
 	position: relative;
 }
 
@@ -23,8 +26,8 @@ body,
 .circle::after {
 	content: '';
 	position: absolute;
-	width: calc(var(--inner-radius) * 2 * 2);
-	height: calc(var(--inner-radius) * 2 * 2);
+	width: calc(var(--innerRadius) * 2 * 2);
+	height: calc(var(--innerRadius) * 2 * 2);
 	border: 2px solid lime;
 	border-radius: 50%;
 	animation: pulse 2s ease-out infinite;

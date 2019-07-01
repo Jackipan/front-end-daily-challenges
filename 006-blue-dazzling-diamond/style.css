@@ -35,7 +35,7 @@ body {
 }
 
 @keyframes animate {
-    0%, 100% {
+    0% {
         border-color: var(--color1) var(--color2) var(--color3) var(--color4);
     }
     
@@ -49,5 +49,9 @@ body {
     
     75% {
         border-color: var(--color2) var(--color3) var(--color4) var(--color1);
+    }
+    
+    100% {
+        border-color: var(--color1) var(--color2) var(--color3) var(--color4);
     }
 }

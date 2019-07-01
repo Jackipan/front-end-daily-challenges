@@ -7,6 +7,11 @@ body {
     background-color: lightgray;
 }
 
+.cards,
+.cards > * {
+    box-sizing: border-box;
+}
+
 .cards {
     width: 20em;
     height: 20em;
@@ -15,15 +20,9 @@ body {
 
 .cards span {
     position: absolute;
-    box-sizing: border-box;
     width: 10em;
     height: 3em;
-    background: linear-gradient(
-        to right,
-        hsl(calc(360deg / 8 * var(--n)), 80%, 70%) 65%,
-        silver 65%, silver 67%,
-        white 67%
-    );
+    background-color: hsl(calc(360deg / 8 * var(--n)), 80%, 70%);
     top: calc(50% - 3em / 2);
     border: 0.2em solid dimgray;
     border-radius: 0.3em 0.8em 0.8em 0.3em;
@@ -33,18 +32,33 @@ body {
 }
 
 @keyframes rotating {
-    0%, 55% {
-        transform: rotate(-1turn);
+    0%, 35% {
+        transform: rotate(0deg);
+    }
+
+    90%, 100% {
+        transform: rotate(360deg);
     }
 }
 
 .cards span::before {
     content: '';
     position: absolute;
+    width: 35%;
+    height: 100%;
+    background-color: white;
+    right: 0;
+    border-radius: 0 0.6em 0.6em 0;
+    border-left: 0.2em solid silver;
+}
+
+.cards span::after {
+    content: '';
+    position: absolute;
     width: 0.4em;
     height: 2em;
     background-color: silver;
-    left: 6.8em;
+    left: 6.5em;
     top: 0.1em;
     box-shadow: 0.7em 0 0 -0.1em silver;
 }

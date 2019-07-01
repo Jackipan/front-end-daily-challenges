@@ -1,11 +1,9 @@
-const COUNT = 50
-let dom = {
-    hexagons: document.querySelector('.hexagons')
-}
+const COUNT = 100;
 
-Array(COUNT).fill('').forEach((x, i) => {
-    let span = document.createElement('span')
-    span.style.setProperty('--scale', Math.pow(0.9, i))
-    span.style.setProperty('--n', i + 1)
-    dom.hexagons.appendChild(span)
-})
+d3.select('.hexagons')
+    .selectAll('span')
+    .data(d3.range(COUNT))
+    .enter()
+    .append('span')
+    .style('--scale', (d) => Math.pow(0.9, d))
+    .style('--n', (d) => d + 1);

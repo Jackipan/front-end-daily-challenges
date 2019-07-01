@@ -42,33 +42,31 @@ body {
     width: 3em;
     height: 3em;
     background-color: white;
+    border-radius: 0 100%;
     top: 3em;
 }
 
-.fox .faces::before {
-    border-radius: 0 100%;
-}
-
-.fox .faces::after {
+.fox .faces::after,
+.fox .ears::after {
     right: 0;
-    border-radius: 100% 0;
+    transform: rotate(-90deg);
 }
 
 .fox .eyes::before,
 .fox .eyes::after {
     border: 0.3em solid;
+    border-color: black black transparent transparent;
     border-radius: 50%;
     top: 4.5em;
 }
 
 .fox .eyes::before {
     left: 1em;
-    border-color: black black transparent transparent;
 }
 
 .fox .eyes::after {
     right: 1em;
-    border-color: black transparent transparent  black;
+    transform: rotate(-90deg);
 }
 
 .fox .ears::before,
@@ -77,16 +75,8 @@ body {
     height: 3em;
     background-color: currentColor;
     filter: brightness(1.25);
-    z-index: -1;
-}
-
-.fox .ears::before {
     border-radius: 0 100% 0 0;
-}
-
-.fox .ears::after {
-    right: 0;
-    border-radius: 100% 0 0 0;
+    z-index: -1;
 }
 
 .fox .nose{
