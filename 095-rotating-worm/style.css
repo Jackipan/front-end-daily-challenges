@@ -12,6 +12,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    --particles: 12;
 }
 
 .worm span {
@@ -26,16 +27,25 @@ body {
     box-shadow: 0 0 33px rgba(0, 0, 0, 0.3);
     animation: rotating 4s infinite cubic-bezier(0.6, -0.5, 0.3, 1.5);
     animation-delay: calc(1s - var(--n) * 100ms);
+    transform-origin: 0%;
 }
 
 @keyframes rotating {
-    from {
-        transform-origin: 0%;
-    }
-
     to {
         transform: rotate(1turn);
-        transform-origin: 0% 50%;
         filter: hue-rotate(5deg);
     }
 }
+
+.worm span:nth-child(1) { --n: 1; }
+.worm span:nth-child(2) { --n: 2; }
+.worm span:nth-child(3) { --n: 3; }
+.worm span:nth-child(4) { --n: 4; }
+.worm span:nth-child(5) { --n: 5; }
+.worm span:nth-child(6) { --n: 6; }
+.worm span:nth-child(7) { --n: 7; }
+.worm span:nth-child(8) { --n: 8; }
+.worm span:nth-child(9) { --n: 9; }
+.worm span:nth-child(10) { --n: 10; }
+.worm span:nth-child(11) { --n: 11; }
+.worm span:nth-child(12) { --n: 12; }

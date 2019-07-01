@@ -1,10 +1,11 @@
-const COUNT_OF_PARTICLES = 100;
+const COUNT_OF_PARTICLES = 100
+const container = document.querySelector('.flame')
 
-d3.select('.flame')
-    .style('--particles', COUNT_OF_PARTICLES)
-    .selectAll('span')
-    .data(d3.range(COUNT_OF_PARTICLES))
-    .enter()
-    .append('span')
-    .style('--n', (d) => d + 1)
-    .style('--rnd', () => Math.random());
+container.style.setProperty('--particles', COUNT_OF_PARTICLES)
+
+Array(COUNT_OF_PARTICLES).fill('').forEach((particle, i) => {
+    let span = document.createElement('span')
+    span.style.setProperty('--n', i + 1)
+    span.style.setProperty('--rnd', Math.random())
+    container.appendChild(span)
+})
